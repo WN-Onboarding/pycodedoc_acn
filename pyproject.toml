@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pycodedoc"
 authors = [
-    {name = "Manuel Renner", email = "manuel.renner@diverger.ai"},
+    {name = "Alexander Kornyukhin", email = "alexander.kornyukhin@accenture.com"},
 ]
 license = {text = "MIT License"}
 description = "Document your Python projects using generative AI"
