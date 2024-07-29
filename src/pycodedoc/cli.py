@@ -47,7 +47,7 @@ def main(
         help="Only use the structure of the codebase to generate the documentation",
     ),
     model: str = typer.Option(
-        "gpt-3.5-turbo-0125",
+        os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME"),
         "--model",
         "-m",
         help="The OpenAI model to use for generating the documentation",

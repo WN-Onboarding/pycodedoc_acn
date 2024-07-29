@@ -1,0 +1,36 @@
+digraph G {
+concentrate=true;
+splines="ortho";
+rankdir="LR";
+subgraph legend{
+    rank = min;
+    label = "legend";
+    Legend [shape=none, margin=0, label = <
+        <table cellspacing="0" cellpadding="0" border="1"><tr><td>Code2flow Legend</td></tr><tr><td>
+        <table cellspacing="0">
+        <tr><td>Regular function</td><td width="50px" bgcolor='#cccccc'></td></tr>
+        <tr><td>Trunk function (nothing calls this)</td><td bgcolor='#966F33'></td></tr>
+        <tr><td>Leaf function (this calls nothing else)</td><td bgcolor='#6db33f'></td></tr>
+        <tr><td>Function call</td><td><font color='black'>&#8594;</font></td></tr>
+        </table></td></tr></table>
+        >];
+}node_72ed39df [label="35: count_tokens()" name="costs::count_tokens" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_9b9b2a45 [label="24: calculate_cost()" name="costs::calculate_cost" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_09996d6e [label="40: estimate_cost()" name="costs::estimate_cost" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_09996d6e -> node_9b9b2a45 [color="#D55E00" penwidth="2"];
+node_09996d6e -> node_72ed39df [color="#D55E00" penwidth="2"];
+node_09996d6e -> node_9b9b2a45 [color="#D55E00" penwidth="2"];
+node_09996d6e -> node_72ed39df [color="#D55E00" penwidth="2"];
+node_09996d6e -> node_9b9b2a45 [color="#D55E00" penwidth="2"];
+node_09996d6e -> node_72ed39df [color="#D55E00" penwidth="2"];
+node_09996d6e -> node_72ed39df [color="#D55E00" penwidth="2"];
+node_09996d6e -> node_9b9b2a45 [color="#D55E00" penwidth="2"];
+node_09996d6e -> node_9b9b2a45 [color="#D55E00" penwidth="2"];
+subgraph cluster_c9e62d3e {
+    node_9b9b2a45 node_72ed39df node_09996d6e;
+    label="File: costs";
+    name="costs";
+    style="filled";
+    graph[style=dotted];
+};
+}

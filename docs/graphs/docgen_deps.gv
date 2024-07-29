@@ -1,0 +1,125 @@
+digraph G {
+concentrate=true;
+splines="ortho";
+rankdir="LR";
+subgraph legend{
+    rank = min;
+    label = "legend";
+    Legend [shape=none, margin=0, label = <
+        <table cellspacing="0" cellpadding="0" border="1"><tr><td>Code2flow Legend</td></tr><tr><td>
+        <table cellspacing="0">
+        <tr><td>Regular function</td><td width="50px" bgcolor='#cccccc'></td></tr>
+        <tr><td>Trunk function (nothing calls this)</td><td bgcolor='#966F33'></td></tr>
+        <tr><td>Leaf function (this calls nothing else)</td><td bgcolor='#6db33f'></td></tr>
+        <tr><td>Function call</td><td><font color='black'>&#8594;</font></td></tr>
+        </table></td></tr></table>
+        >];
+}node_f4121a68 [label="0: (global)()" name="docgen::(global)" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_4dc41b9d [label="46: run_batch_completions()" name="llm::Llm.run_batch_completions" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_65c2c3f3 [label="144: generate_classes_desc()" name="docgen::DocGen.generate_classes_desc" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_11eaa2a4 [label="108: get_modules()" name="parser::Parser.get_modules" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_afbfdf21 [label="165: get_project_prompt()" name="prompts::get_project_prompt" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_821add66 [label="218: generate_project_desc()" name="docgen::DocGen.generate_project_desc" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_b852120d [label="166: generate_modules_desc()" name="docgen::DocGen.generate_modules_desc" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_ddf52d97 [label="55: get_functions_prompts()" name="prompts::get_functions_prompts" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_dcb812fe [label="171: get_code_structure()" name="parser::Parser.get_code_structure" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_53d8c32d [label="145: get_functions()" name="parser::Parser.get_functions" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_f807afa2 [label="129: generate_functions_desc()" name="docgen::DocGen.generate_functions_desc" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_1ed5acc0 [label="72: get_classes_prompts()" name="prompts::get_classes_prompts" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_51fb1d4e [label="326: get_tree()" name="parser::Parser.get_tree" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_9e8e0861 [label="25: run_completions()" name="llm::Llm.run_completions" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_69a250df [label="0: (global)()" name="parser::(global)" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_5f06f4f0 [label="6: set_logger()" name="utils::set_logger" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_a35b46ec [label="351: get_module_deps()" name="parser::Parser.get_module_deps" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_dbcd07b9 [label="210: write_graphs()" name="parser::Parser.write_graphs" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_7b421518 [label="191: generate_modules_deps_desc()" name="docgen::DocGen.generate_modules_deps_desc" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_d59032f8 [label="89: get_modules_prompts()" name="prompts::get_modules_prompts" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_2311cb15 [label="155: get_classes_code()" name="docgen::DocGen.get_classes_code" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_b5ceb948 [label="285: get_modules_paths()" name="parser::Parser.get_modules_paths" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_6eb046a3 [label="176: get_modules_code()" name="docgen::DocGen.get_modules_code" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_6fb80fea [label="187: get_deps_code()" name="parser::Parser.get_deps_code" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_86568fdc [label="132: get_classes()" name="parser::Parser.get_classes" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_ecada631 [label="123: get_modules_deps_prompts()" name="prompts::get_modules_deps_prompts" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_23ffa544 [label="263: generate_markdown()" name="docgen::DocGen.generate_markdown" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_f4121a68 -> node_5f06f4f0 [color="#000000" penwidth="2"];
+node_f807afa2 -> node_53d8c32d [color="#56B4E9" penwidth="2"];
+node_f807afa2 -> node_ddf52d97 [color="#56B4E9" penwidth="2"];
+node_f807afa2 -> node_4dc41b9d [color="#56B4E9" penwidth="2"];
+node_f807afa2 -> node_53d8c32d [color="#56B4E9" penwidth="2"];
+node_65c2c3f3 -> node_86568fdc [color="#009E73" penwidth="2"];
+node_65c2c3f3 -> node_1ed5acc0 [color="#009E73" penwidth="2"];
+node_65c2c3f3 -> node_4dc41b9d [color="#009E73" penwidth="2"];
+node_2311cb15 -> node_dcb812fe [color="#0072B2" penwidth="2"];
+node_b852120d -> node_11eaa2a4 [color="#0072B2" penwidth="2"];
+node_b852120d -> node_d59032f8 [color="#0072B2" penwidth="2"];
+node_b852120d -> node_4dc41b9d [color="#0072B2" penwidth="2"];
+node_6eb046a3 -> node_dcb812fe [color="#009E73" penwidth="2"];
+node_6eb046a3 -> node_dbcd07b9 [color="#009E73" penwidth="2"];
+node_7b421518 -> node_11eaa2a4 [color="#000000" penwidth="2"];
+node_7b421518 -> node_a35b46ec [color="#000000" penwidth="2"];
+node_7b421518 -> node_6fb80fea [color="#000000" penwidth="2"];
+node_7b421518 -> node_ecada631 [color="#000000" penwidth="2"];
+node_7b421518 -> node_4dc41b9d [color="#000000" penwidth="2"];
+node_821add66 -> node_afbfdf21 [color="#D55E00" penwidth="2"];
+node_821add66 -> node_51fb1d4e [color="#D55E00" penwidth="2"];
+node_821add66 -> node_9e8e0861 [color="#D55E00" penwidth="2"];
+node_23ffa544 -> node_51fb1d4e [color="#F0E442" penwidth="2"];
+node_23ffa544 -> node_b5ceb948 [color="#F0E442" penwidth="2"];
+node_23ffa544 -> node_b5ceb948 [color="#F0E442" penwidth="2"];
+node_69a250df -> node_5f06f4f0 [color="#CC79A7" penwidth="2"];
+subgraph cluster_a44d3c55 {
+    node_f4121a68;
+    label="File: docgen";
+    name="docgen";
+    style="filled";
+    graph[style=dotted];
+    subgraph cluster_172a8cf7 {
+        node_f807afa2 node_65c2c3f3 node_2311cb15 node_b852120d node_6eb046a3 node_7b421518 node_821add66 node_23ffa544;
+        label="Class: DocGen";
+        name="DocGen";
+        style="filled";
+        graph[style=dotted];
+    };
+};
+subgraph cluster_ae5e1334 {
+    label="File: llm";
+    name="llm";
+    style="filled";
+    graph[style=dotted];
+    subgraph cluster_efbedaec {
+        node_9e8e0861 node_4dc41b9d;
+        label="Class: Llm";
+        name="Llm";
+        style="filled";
+        graph[style=dotted];
+    };
+};
+subgraph cluster_22895b2b {
+    node_ddf52d97 node_1ed5acc0 node_d59032f8 node_ecada631 node_afbfdf21;
+    label="File: prompts";
+    name="prompts";
+    style="filled";
+    graph[style=dotted];
+};
+subgraph cluster_4736196e {
+    node_69a250df;
+    label="File: parser";
+    name="parser";
+    style="filled";
+    graph[style=dotted];
+    subgraph cluster_e57deab4 {
+        node_11eaa2a4 node_86568fdc node_53d8c32d node_dcb812fe node_6fb80fea node_dbcd07b9 node_b5ceb948 node_51fb1d4e node_a35b46ec;
+        label="Class: Parser";
+        name="Parser";
+        style="filled";
+        graph[style=dotted];
+    };
+};
+subgraph cluster_99353362 {
+    node_5f06f4f0;
+    label="File: utils";
+    name="utils";
+    style="filled";
+    graph[style=dotted];
+};
+}

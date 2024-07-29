@@ -1,8 +1,9 @@
+import os
 import asyncio
 import logging
 from typing import ClassVar
 
-from openai import AsyncOpenAI, OpenAI
+from openai import AzureOpenAI, AsyncAzureOpenAI
 from pydantic import BaseModel, PrivateAttr
 from tenacity import retry, stop_after_attempt
 from tqdm.asyncio import tqdm_asyncio
@@ -16,13 +17,12 @@ def log_retry(retry_state):
         retry_state.outcome,
     )
 
-
 class Llm(BaseModel):
     batch_size: int = 100
     max_retries: int = 5
-    _client: ClassVar[OpenAI] = PrivateAttr(OpenAI())
+    _client: ClassVar[AzureOpenAI] = PrivateAttr(AzureOpenAI())
 
-    def run_completions(self, messages, model="gpt-3.5-turbo-0125", **kwargs) -> list:
+    def run_completions(self, messages, model=os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME"), **kwargs) -> list:
         """runs completions synchronously"""
         response = self._client.chat.completions.create(
             messages=messages, model=model, **kwargs
@@ -35,11 +35,12 @@ class Llm(BaseModel):
         """parses stream response from completions"""
         response = {"role": "assistant", "content": None, "tool_calls": None}
         for chunk in stream:
-            choice = chunk.choices[0]
-            if choice.delta and choice.delta.content:
-                self._parse_delta_content(choice.delta, response)
-            elif choice.delta and choice.delta.tool_calls:
-                self._parse_delta_tools(choice.delta, response)
+            if len(chunk.choices) > 0:
+                choice = chunk.choices[0]
+                if choice.delta and choice.delta.content:
+                    self._parse_delta_content(choice.delta, response)
+                elif choice.delta and choice.delta.tool_calls:
+                    self._parse_delta_tools(choice.delta, response)
         return response
 
     def run_batch_completions(self, messages_batches: list, **kwargs) -> list:
@@ -48,7 +49,7 @@ class Llm(BaseModel):
 
     async def _run_batch_completions(self, messages_batches: list, **kwargs) -> list:
         """runs completions by batch asynchronously"""
-        async with AsyncOpenAI(max_retries=self.max_retries) as client:
+        async with AsyncAzureOpenAI(max_retries=self.max_retries) as client:
             coroutines = [
                 self._run_async_completions(client, messages, **kwargs)
                 for messages in messages_batches
@@ -60,7 +61,7 @@ class Llm(BaseModel):
 
     @retry(stop=stop_after_attempt(3), after=log_retry)
     async def _run_async_completions(
-        self, client, messages, model="gpt-3.5-turbo-0125", **kwargs
+        self, client, messages, model=os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME"), **kwargs
     ):
         """runs completions asynchronously"""
         response = await client.chat.completions.create(
@@ -74,11 +75,12 @@ class Llm(BaseModel):
         """parses stream response from async completions"""
         response = {"role": "assistant", "content": None, "tool_calls": None}
         async for chunk in stream:
-            choice = chunk.choices[0]
-            if choice.delta and choice.delta.content:
-                self._parse_delta_content(choice.delta, response)
-            elif choice.delta and choice.delta.tool_calls:
-                self._parse_delta_tools(choice.delta, response)
+            if len(chunk.choices) > 0:
+                choice = chunk.choices[0]
+                if choice.delta and choice.delta.content:
+                    self._parse_delta_content(choice.delta, response)
+                elif choice.delta and choice.delta.tool_calls:
+                    self._parse_delta_tools(choice.delta, response)
         return response
 
     async def _run_batches(self, coroutines: list):

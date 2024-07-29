@@ -1,0 +1,50 @@
+digraph G {
+concentrate=true;
+splines="ortho";
+rankdir="LR";
+subgraph legend{
+    rank = min;
+    label = "legend";
+    Legend [shape=none, margin=0, label = <
+        <table cellspacing="0" cellpadding="0" border="1"><tr><td>Code2flow Legend</td></tr><tr><td>
+        <table cellspacing="0">
+        <tr><td>Regular function</td><td width="50px" bgcolor='#cccccc'></td></tr>
+        <tr><td>Trunk function (nothing calls this)</td><td bgcolor='#966F33'></td></tr>
+        <tr><td>Leaf function (this calls nothing else)</td><td bgcolor='#6db33f'></td></tr>
+        <tr><td>Function call</td><td><font color='black'>&#8594;</font></td></tr>
+        </table></td></tr></table>
+        >];
+}node_3fbc3366 [label="25: run_completions()" name="llm::Llm.run_completions" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_70f56772 [label="50: _run_batch_completions()" name="llm::Llm._run_batch_completions" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_b42c89b4 [label="92: _batches()" name="llm::Llm._batches" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_96476395 [label="46: run_batch_completions()" name="llm::Llm.run_batch_completions" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_b3c60edc [label="63: _run_async_completions()" name="llm::Llm._run_async_completions" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_956b37c7 [label="96: _parse_delta_content()" name="llm::Llm._parse_delta_content" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_9618a406 [label="86: _run_batches()" name="llm::Llm._run_batches" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_42c09d83 [label="74: _parse_async_stream()" name="llm::Llm._parse_async_stream" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_9f3d63d4 [label="102: _parse_delta_tools()" name="llm::Llm._parse_delta_tools" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_e747b97c [label="34: _parse_stream()" name="llm::Llm._parse_stream" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_3fbc3366 -> node_e747b97c [color="#D55E00" penwidth="2"];
+node_e747b97c -> node_956b37c7 [color="#F0E442" penwidth="2"];
+node_e747b97c -> node_9f3d63d4 [color="#F0E442" penwidth="2"];
+node_96476395 -> node_70f56772 [color="#0072B2" penwidth="2"];
+node_70f56772 -> node_9618a406 [color="#56B4E9" penwidth="2"];
+node_70f56772 -> node_b3c60edc [color="#56B4E9" penwidth="2"];
+node_b3c60edc -> node_42c09d83 [color="#F0E442" penwidth="2"];
+node_42c09d83 -> node_956b37c7 [color="#009E73" penwidth="2"];
+node_42c09d83 -> node_9f3d63d4 [color="#009E73" penwidth="2"];
+node_9618a406 -> node_b42c89b4 [color="#D55E00" penwidth="2"];
+subgraph cluster_3eccdaa4 {
+    label="File: llm";
+    name="llm";
+    style="filled";
+    graph[style=dotted];
+    subgraph cluster_d8d548e4 {
+        node_3fbc3366 node_e747b97c node_96476395 node_70f56772 node_b3c60edc node_42c09d83 node_9618a406 node_b42c89b4 node_956b37c7 node_9f3d63d4;
+        label="Class: Llm";
+        name="Llm";
+        style="filled";
+        graph[style=dotted];
+    };
+};
+}

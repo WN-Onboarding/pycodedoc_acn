@@ -1,0 +1,121 @@
+digraph G {
+concentrate=true;
+splines="ortho";
+rankdir="LR";
+subgraph legend{
+    rank = min;
+    label = "legend";
+    Legend [shape=none, margin=0, label = <
+        <table cellspacing="0" cellpadding="0" border="1"><tr><td>Code2flow Legend</td></tr><tr><td>
+        <table cellspacing="0">
+        <tr><td>Regular function</td><td width="50px" bgcolor='#cccccc'></td></tr>
+        <tr><td>Trunk function (nothing calls this)</td><td bgcolor='#966F33'></td></tr>
+        <tr><td>Leaf function (this calls nothing else)</td><td bgcolor='#6db33f'></td></tr>
+        <tr><td>Function call</td><td><font color='black'>&#8594;</font></td></tr>
+        </table></td></tr></table>
+        >];
+}node_a7cbb9a8 [label="171: get_code_structure()" name="parser::Parser.get_code_structure" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_39e973be [label="376: get_module_names()" name="parser::Parser.get_module_names" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_90d7d123 [label="64: parse_entities()" name="parser::Module.parse_entities" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_a0c3078a [label="145: get_functions()" name="parser::Parser.get_functions" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_02a0df92 [label="326: get_tree()" name="parser::Parser.get_tree" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_069be7ec [label="454: _add_nodes_attrs()" name="parser::Parser._add_nodes_attrs" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_e3c0c4bb [label="126: get_module()" name="parser::Parser.get_module" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_ddd7516a [label="272: parse_module_structure()" name="parser::Parser.parse_module_structure" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_cb23eaed [label="299: _get_matching_paths()" name="parser::Parser._get_matching_paths" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_c140fe3a [label="351: get_module_deps()" name="parser::Parser.get_module_deps" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_d835465a [label="248: parse_function_structure()" name="parser::Parser.parse_function_structure" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_7d5d2885 [label="210: write_graphs()" name="parser::Parser.write_graphs" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_505dbba2 [label="433: get_related_entities()" name="parser::Parser.get_related_entities" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_c2b4faf8 [label="100: parse_module()" name="parser::Parser.parse_module" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_5494c753 [label="307: _not_match()" name="parser::Parser._not_match" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_4de21ed2 [label="285: get_modules_paths()" name="parser::Parser.get_modules_paths" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_43945472 [label="160: get_entities()" name="parser::Parser.get_entities" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_5c854439 [label="93: model_post_init()" name="parser::Parser.model_post_init" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_1ce2949d [label="462: _get_edge_nodes()" name="parser::Parser._get_edge_nodes" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_45ee1986 [label="187: get_deps_code()" name="parser::Parser.get_deps_code" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_e1e52dda [label="132: get_classes()" name="parser::Parser.get_classes" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_beea8bcb [label="379: parse_module_deps()" name="parser::Parser.parse_module_deps" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_f897667f [label="439: _find_cross_edges()" name="parser::Parser._find_cross_edges" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_43af3ca4 [label="332: _get_tree_recursively()" name="parser::Parser._get_tree_recursively" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_5c9ddab1 [label="261: parse_class_structure()" name="parser::Parser.parse_class_structure" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_55433e57 [label="96: parse_modules()" name="parser::Parser.parse_modules" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_9ba13fb7 [label="217: _write_graphs()" name="parser::Parser._write_graphs" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_a1548ff8 [label="361: get_import_names()" name="parser::Parser.get_import_names" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_fd924a03 [label="291: _get_paths_recursively()" name="parser::Parser._get_paths_recursively" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_4d501e38 [label="108: get_modules()" name="parser::Parser.get_modules" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_43edaf59 [label="203: concat_dep_code()" name="parser::Parser.concat_dep_code" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_5cf067f6 [label="419: parse_files_flows()" name="parser::Parser.parse_files_flows" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_5fa8c6ef [label="316: _match()" name="parser::Parser._match" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_87f8077c [label="448: _add_parents_attr()" name="parser::Parser._add_parents_attr" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_e338e60d [label="39: parse_methods()" name="parser::Class.parse_methods" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_90d7d123 -> node_e338e60d [color="#009E73" penwidth="2"];
+node_5c854439 -> node_55433e57 [color="#E69F00" penwidth="2"];
+node_55433e57 -> node_4de21ed2 [color="#CC79A7" penwidth="2"];
+node_55433e57 -> node_c2b4faf8 [color="#CC79A7" penwidth="2"];
+node_c2b4faf8 -> node_90d7d123 [color="#000000" penwidth="2"];
+node_e3c0c4bb -> node_4d501e38 [color="#009E73" penwidth="2"];
+node_e3c0c4bb -> node_4d501e38 [color="#009E73" penwidth="2"];
+node_e1e52dda -> node_4d501e38 [color="#56B4E9" penwidth="2"];
+node_a0c3078a -> node_4d501e38 [color="#56B4E9" penwidth="2"];
+node_43945472 -> node_4d501e38 [color="#56B4E9" penwidth="2"];
+node_a7cbb9a8 -> node_ddd7516a [color="#000000" penwidth="2"];
+node_a7cbb9a8 -> node_5c9ddab1 [color="#000000" penwidth="2"];
+node_a7cbb9a8 -> node_d835465a [color="#000000" penwidth="2"];
+node_45ee1986 -> node_beea8bcb [color="#D55E00" penwidth="2"];
+node_45ee1986 -> node_9ba13fb7 [color="#D55E00" penwidth="2"];
+node_45ee1986 -> node_43edaf59 [color="#D55E00" penwidth="2"];
+node_7d5d2885 -> node_5cf067f6 [color="#0072B2" penwidth="2"];
+node_7d5d2885 -> node_9ba13fb7 [color="#0072B2" penwidth="2"];
+node_ddd7516a -> node_d835465a [color="#56B4E9" penwidth="2"];
+node_ddd7516a -> node_5c9ddab1 [color="#56B4E9" penwidth="2"];
+node_4de21ed2 -> node_fd924a03 [color="#56B4E9" penwidth="2"];
+node_fd924a03 -> node_cb23eaed [color="#009E73" penwidth="2"];
+node_fd924a03 -> node_fd924a03 [color="#009E73" penwidth="2"];
+node_cb23eaed -> node_5494c753 [color="#0072B2" penwidth="2"];
+node_cb23eaed -> node_5fa8c6ef [color="#0072B2" penwidth="2"];
+node_02a0df92 -> node_43af3ca4 [color="#56B4E9" penwidth="2"];
+node_43af3ca4 -> node_cb23eaed [color="#F0E442" penwidth="2"];
+node_43af3ca4 -> node_5fa8c6ef [color="#F0E442" penwidth="2"];
+node_43af3ca4 -> node_43af3ca4 [color="#F0E442" penwidth="2"];
+node_c140fe3a -> node_a1548ff8 [color="#56B4E9" penwidth="2"];
+node_c140fe3a -> node_4de21ed2 [color="#56B4E9" penwidth="2"];
+node_c140fe3a -> node_39e973be [color="#56B4E9" penwidth="2"];
+node_c140fe3a -> node_4d501e38 [color="#56B4E9" penwidth="2"];
+node_a1548ff8 -> node_e3c0c4bb [color="#000000" penwidth="2"];
+node_beea8bcb -> node_5cf067f6 [color="#009E73" penwidth="2"];
+node_beea8bcb -> node_505dbba2 [color="#009E73" penwidth="2"];
+node_505dbba2 -> node_f897667f [color="#56B4E9" penwidth="2"];
+node_505dbba2 -> node_1ce2949d [color="#56B4E9" penwidth="2"];
+node_f897667f -> node_87f8077c [color="#CC79A7" penwidth="2"];
+node_87f8077c -> node_069be7ec [color="#F0E442" penwidth="2"];
+node_87f8077c -> node_069be7ec [color="#F0E442" penwidth="2"];
+node_069be7ec -> node_069be7ec [color="#F0E442" penwidth="2"];
+subgraph cluster_70191691 {
+    label="File: parser";
+    name="parser";
+    style="filled";
+    graph[style=dotted];
+    subgraph cluster_98141531 {
+        node_e338e60d;
+        label="Class: Class";
+        name="Class";
+        style="filled";
+        graph[style=dotted];
+    };
+    subgraph cluster_7f49aa19 {
+        node_90d7d123;
+        label="Class: Module";
+        name="Module";
+        style="filled";
+        graph[style=dotted];
+    };
+    subgraph cluster_a059e265 {
+        node_5c854439 node_55433e57 node_c2b4faf8 node_4d501e38 node_e3c0c4bb node_e1e52dda node_a0c3078a node_43945472 node_a7cbb9a8 node_45ee1986 node_43edaf59 node_7d5d2885 node_9ba13fb7 node_d835465a node_5c9ddab1 node_ddd7516a node_4de21ed2 node_fd924a03 node_cb23eaed node_5494c753 node_5fa8c6ef node_02a0df92 node_43af3ca4 node_c140fe3a node_a1548ff8 node_39e973be node_beea8bcb node_5cf067f6 node_505dbba2 node_f897667f node_87f8077c node_069be7ec node_1ce2949d;
+        label="Class: Parser";
+        name="Parser";
+        style="filled";
+        graph[style=dotted];
+    };
+};
+}

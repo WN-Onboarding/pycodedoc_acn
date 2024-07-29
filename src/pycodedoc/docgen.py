@@ -3,6 +3,7 @@ import os
 from collections import defaultdict
 
 from pydantic import BaseModel, PrivateAttr
+import typing
 
 from pycodedoc.llm import Llm
 from pycodedoc.parser import Parser
@@ -55,7 +56,7 @@ class DocGen(BaseModel, extra="forbid"):
     create_graphs: bool = True
     prompts: dict = PROMPTS
     output_dir: str = "./docs"
-    model: str = "gpt-3.5-turbo-0125"
+    model: typing.Optional[str] = os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME")
     llm: Llm = Llm()
     parser: Parser = None
     _descriptions: Descriptions = PrivateAttr(Descriptions())
