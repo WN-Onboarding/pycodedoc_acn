@@ -24,4 +24,3 @@ readme = {file=["README.md"], content-type="text/markdown"}
 dependencies = {file = ["requirements.txt"]}
 
 [tool.isort]
-profile = "black"
