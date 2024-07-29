@@ -14,13 +14,13 @@ subgraph legend{
         <tr><td>Function call</td><td><font color='black'>&#8594;</font></td></tr>
         </table></td></tr></table>
         >];
-}node_0317ca57 [label="12: load_prompts()" name="cli::load_prompts" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
-node_25d2e244 [label="24: main()" name="cli::main" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
-node_8e8493d4 [label="18: write_prompts()" name="cli::write_prompts" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
-node_25d2e244 -> node_0317ca57 [color="#F0E442" penwidth="2"];
-node_25d2e244 -> node_8e8493d4 [color="#F0E442" penwidth="2"];
-subgraph cluster_7e66ab9a {
-    node_0317ca57 node_8e8493d4 node_25d2e244;
+}node_98342aa6 [label="24: main()" name="cli::main" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_2c77d9a7 [label="18: write_prompts()" name="cli::write_prompts" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_1eabc5b1 [label="12: load_prompts()" name="cli::load_prompts" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_98342aa6 -> node_1eabc5b1 [color="#D55E00" penwidth="2"];
+node_98342aa6 -> node_2c77d9a7 [color="#D55E00" penwidth="2"];
+subgraph cluster_541afaab {
+    node_1eabc5b1 node_2c77d9a7 node_98342aa6;
     label="File: cli";
     name="cli";
     style="filled";

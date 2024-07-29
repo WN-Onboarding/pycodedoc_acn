@@ -14,18 +14,18 @@ subgraph legend{
         <tr><td>Function call</td><td><font color='black'>&#8594;</font></td></tr>
         </table></td></tr></table>
         >];
-}node_1b255d89 [label="0: (global)()" name="parser::(global)" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
-node_6b99a07c [label="6: set_logger()" name="utils::set_logger" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
-node_1b255d89 -> node_6b99a07c [color="#E69F00" penwidth="2"];
-subgraph cluster_097614dd {
-    node_1b255d89;
+}node_78e0d831 [label="0: (global)()" name="parser::(global)" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_2afc970c [label="6: set_logger()" name="utils::set_logger" shape="rect" style="rounded,filled" fillcolor="#6db33f" ];
+node_78e0d831 -> node_2afc970c [color="#E69F00" penwidth="2"];
+subgraph cluster_b4c8e83e {
+    node_78e0d831;
     label="File: parser";
     name="parser";
     style="filled";
     graph[style=dotted];
 };
-subgraph cluster_5e237f28 {
-    node_6b99a07c;
+subgraph cluster_51a2f5b4 {
+    node_2afc970c;
     label="File: utils";
     name="utils";
     style="filled";

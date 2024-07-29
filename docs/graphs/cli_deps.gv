@@ -14,33 +14,33 @@ subgraph legend{
         <tr><td>Function call</td><td><font color='black'>&#8594;</font></td></tr>
         </table></td></tr></table>
         >];
-}node_ee45890a [label="24: main()" name="cli::main" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
-node_d4d4346e [label="67: generate_documentation()" name="docgen::DocGen.generate_documentation" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
-node_e3493542 [label="40: estimate_cost()" name="costs::estimate_cost" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
-node_ee45890a -> node_d4d4346e [color="#56B4E9" penwidth="2"];
-node_ee45890a -> node_e3493542 [color="#56B4E9" penwidth="2"];
-subgraph cluster_c4fa7ba5 {
-    node_ee45890a;
+}node_9bc1fdfe [label="40: estimate_cost()" name="costs::estimate_cost" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_5cad0a42 [label="24: main()" name="cli::main" shape="rect" style="rounded,filled" fillcolor="#966F33" ];
+node_d991457e [label="67: generate_documentation()" name="docgen::DocGen.generate_documentation" shape="rect" style="rounded,filled" fillcolor="#cccccc" ];
+node_5cad0a42 -> node_d991457e [color="#56B4E9" penwidth="2"];
+node_5cad0a42 -> node_9bc1fdfe [color="#56B4E9" penwidth="2"];
+subgraph cluster_e2b5adff {
+    node_5cad0a42;
     label="File: cli";
     name="cli";
     style="filled";
     graph[style=dotted];
 };
-subgraph cluster_07d5f09c {
+subgraph cluster_89f218c2 {
     label="File: docgen";
     name="docgen";
     style="filled";
     graph[style=dotted];
-    subgraph cluster_08412778 {
-        node_d4d4346e;
+    subgraph cluster_f0ab21aa {
+        node_d991457e;
         label="Class: DocGen";
         name="DocGen";
         style="filled";
         graph[style=dotted];
     };
 };
-subgraph cluster_3a7b3752 {
-    node_e3493542;
+subgraph cluster_652b4f43 {
+    node_9bc1fdfe;
     label="File: costs";
     name="costs";
     style="filled";
